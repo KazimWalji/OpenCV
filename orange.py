@@ -2,12 +2,12 @@ import cv2
 import numpy as np
 import time
 
-image = cv2.imread("w6.jpg", -1) #file name of image
+image = cv2.imread("o2.jpg", -1) #file name of image
 orig = image
 
 hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV) #hsv format
 
-edges = cv2.inRange(hsv, (0,0,196), (120,70,255)) #filter out unwanted colors
+edges = cv2.inRange(hsv, (10,180,100), (25,255,255)) #filter out unwanted colors
 kernel = np.ones((5, 5), np.uint8)  #apply kernel, blurs
 edges = cv2.erode(edges, kernel) #detect edges
 edges = cv2.dilate(edges, kernel)
